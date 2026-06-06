@@ -248,10 +248,10 @@ export default function ContactSection({ data, variant, palette }: ContactSectio
           className="border-t border-white/[0.06] pt-8 text-center"
         >
           <p className="text-sm text-slate-500">
-            © 2026 Jainab Bee. All rights reserved.
+              Jainab Bee.
           </p>
           <p className="mt-1 text-xs text-slate-600">
-            Built with Next.js &amp; Framer Motion
+            AI / ML enthusiast 
           </p>
         </motion.footer>
       </motion.div>
