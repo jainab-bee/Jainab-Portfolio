@@ -1,0 +1,292 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   JAINAB BEE PORTFOLIO - GLOBAL STYLES
+   Premium Dark Theme with Cyan Accents
+   ============================================ */
+
+:root {
+  --background: #020617;
+  --foreground: #f8fafc;
+  --cyan-glow: rgba(34, 211, 238, 0.4);
+  --cyan-accent: #22d3ee;
+  --cyan-dark: #0891b2;
+  --glass-bg: rgba(15, 23, 42, 0.7);
+  --glass-border: rgba(34, 211, 238, 0.15);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #22d3ee, #0891b2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #67e8f9, #22d3ee);
+}
+
+/* ============================================
+   SELECTION STYLES
+   ============================================ */
+::selection {
+  background: rgba(34, 211, 238, 0.3);
+  color: #f8fafc;
+}
+
+/* ============================================
+   GLASSMORPHISM UTILITIES
+   ============================================ */
+@layer utilities {
+  .glass {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(34, 211, 238, 0.1);
+  }
+
+  .glass-strong {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(34, 211, 238, 0.15);
+  }
+
+  .glass-card {
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(34, 211, 238, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card:hover {
+    border-color: rgba(34, 211, 238, 0.25);
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.08),
+                0 8px 32px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #22d3ee, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-cyan {
+    background: linear-gradient(135deg, #67e8f9, #22d3ee, #0891b2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glow effects */
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.15),
+                0 0 60px rgba(34, 211, 238, 0.05);
+  }
+
+  .glow-cyan-strong {
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.25),
+                0 0 80px rgba(34, 211, 238, 0.1);
+  }
+
+  /* Section heading decoration */
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold text-center mb-4;
+  }
+
+  .section-underline {
+    @apply mx-auto w-24 h-1 rounded-full;
+    background: linear-gradient(90deg, transparent, #22d3ee, transparent);
+  }
+
+  /* Shimmer animation */
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+
+  /* Floating animation */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Pulse glow */
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Typing cursor */
+  .typing-cursor {
+    animation: blink 1s step-end infinite;
+  }
+}
+
+/* ============================================
+   KEYFRAME ANIMATIONS
+   ============================================ */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(34, 211, 238, 0.3),
+                0 0 20px rgba(34, 211, 238, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.5),
+                0 0 40px rgba(34, 211, 238, 0.2);
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes particle-float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translate(10px, -30px) scale(1.1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-5px, -60px) scale(0.9);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translate(15px, -30px) scale(1.05);
+    opacity: 0.7;
+  }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
+}
+
+@keyframes aurora {
+  from { background-position: 50% 50%, 50% 50%; }
+  to { background-position: 350% 50%, 350% 50%; }
+}
+
+/* ============================================
+   PARTICLE BACKGROUND (Pure CSS)
+   ============================================ */
+.particles-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(34, 211, 238, 0.5);
+  border-radius: 50%;
+  animation: particle-float linear infinite;
+}
+
+.particle:nth-child(1) { left: 10%; top: 80%; animation-duration: 12s; animation-delay: 0s; }
+.particle:nth-child(2) { left: 20%; top: 90%; animation-duration: 15s; animation-delay: 1s; width: 2px; height: 2px; }
+.particle:nth-child(3) { left: 30%; top: 75%; animation-duration: 10s; animation-delay: 2s; }
+.particle:nth-child(4) { left: 40%; top: 85%; animation-duration: 14s; animation-delay: 0.5s; width: 4px; height: 4px; }
+.particle:nth-child(5) { left: 50%; top: 70%; animation-duration: 11s; animation-delay: 3s; }
+.particle:nth-child(6) { left: 60%; top: 95%; animation-duration: 13s; animation-delay: 1.5s; width: 2px; height: 2px; }
+.particle:nth-child(7) { left: 70%; top: 80%; animation-duration: 16s; animation-delay: 2.5s; }
+.particle:nth-child(8) { left: 80%; top: 88%; animation-duration: 12s; animation-delay: 0.8s; width: 3px; height: 3px; }
+.particle:nth-child(9) { left: 90%; top: 72%; animation-duration: 14s; animation-delay: 4s; }
+.particle:nth-child(10) { left: 15%; top: 92%; animation-duration: 11s; animation-delay: 1.2s; width: 2px; height: 2px; }
+.particle:nth-child(11) { left: 25%; top: 78%; animation-duration: 15s; animation-delay: 3.5s; }
+.particle:nth-child(12) { left: 35%; top: 96%; animation-duration: 13s; animation-delay: 0.3s; width: 4px; height: 4px; }
+.particle:nth-child(13) { left: 45%; top: 82%; animation-duration: 10s; animation-delay: 2.8s; }
+.particle:nth-child(14) { left: 55%; top: 76%; animation-duration: 16s; animation-delay: 1.8s; width: 2px; height: 2px; }
+.particle:nth-child(15) { left: 65%; top: 90%; animation-duration: 12s; animation-delay: 4.5s; }
+.particle:nth-child(16) { left: 75%; top: 84%; animation-duration: 14s; animation-delay: 0.6s; }
+.particle:nth-child(17) { left: 85%; top: 94%; animation-duration: 11s; animation-delay: 3.2s; width: 3px; height: 3px; }
+.particle:nth-child(18) { left: 5%; top: 86%; animation-duration: 15s; animation-delay: 2.2s; }
+.particle:nth-child(19) { left: 95%; top: 78%; animation-duration: 13s; animation-delay: 1.4s; width: 2px; height: 2px; }
+.particle:nth-child(20) { left: 48%; top: 92%; animation-duration: 10s; animation-delay: 3.8s; }
+
+/* ============================================
+   SMOOTH TRANSITIONS
+   ============================================ */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* ============================================
+   RESPONSIVE UTILITIES
+   ============================================ */
+@media (max-width: 768px) {
+  .section-heading {
+    font-size: 1.875rem;
+  }
+}
